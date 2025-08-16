@@ -6,7 +6,7 @@ import './App.css';
 
 // WHAT: This is the main component of our application.
 // WHY: We use it as the entry point to set up our routing.
-function App() {
+function App() {n
   return (
     // The <Router> component enables all the routing functionality.
     <Router>
