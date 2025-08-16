@@ -1,10 +1,11 @@
 export const articleData ={
-    title: 'Lorem Ipsum Dolor Sit Amet', 
-    subTitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    imageCaption: 'Image caption goes here', 
-    authorName: 'Author Name',
+    title: 'Rifah Tasnia Mahek', 
+    subTitle: 'Im a student current studying in CSE department. this is my article page',
+    imageCaption: 'This is a picture of my university', 
+    authorName: 'Mahek',
     publishDate: '7 January, 2025',
-    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+    body: 'As a student of Computer Science and Engineering (CSE), I am passionate about exploring the world of technology, programming, and problem solving.n the field of CSE, I enjoy learning about algorithms, software development, and how technology can be applied to solve real-world problems.Every day, I try to improve myself by working on projects, practicing coding, and staying curious about new innovations',
+
 };
 
 export const commentsData = [
