@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { articleData } from '../data'; // Import our article data
+import { articleData } from '../data'; 
 import PostReactions from './PostReactions';
 import CommentSection from './CommentSection';
 
@@ -24,7 +24,7 @@ function ArticlePage() {
       <div className="author-info">
         <div className="author-avatar"></div>
         <div className="author-details">
-          {/* Link navigates to author page */}
+         
           <Link to={`/author/${encodeURIComponent(authorName)}`}>
             {authorName}
           </Link>
