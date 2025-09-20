@@ -1,72 +1,76 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import profilePic from "../assets/profile.png.png";
+import { useParams, useNavigate } from "react-router-dom";
+import profilePic from "../assets/profilepic.jpeg";
 
 function AuthorProfilePage() {
+  const { authorName } = useParams();
   const navigate = useNavigate();
 
   return (
     <div
       style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        backgroundColor: "#f0f2f5",
+        backgroundColor: "#fff", // light background
+        minHeight: "100vh",
+        width: "100%",
+        padding: "40px",
+        color: "#000",
       }}
     >
-      {/* Profile Card */}
-      <div
+      {/* Back Button */}
+      <button
+        onClick={() => navigate(-1)}
         style={{
-          width: "400px",
-          padding: "40px 30px",
-          borderRadius: "15px",
-          backgroundColor: "#fff",
-          boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
-          textAlign: "center",
+          padding: "8px 16px",
+          marginBottom: "20px",
+          backgroundColor: "#f0f0f0",
+          border: "1px solid #ccc",
+          borderRadius: "6px",
+          cursor: "pointer",
         }}
       >
-        {/* Profile Picture */}
-        <div
+        ← Back
+      </button>
+
+      {/* Top Section */}
+      <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+        <img
+          src={profilePic}
+          alt={authorName}
           style={{
-            width: "150px",
-            height: "150px",
+            width: "80px",
+            height: "80px",
             borderRadius: "50%",
-            overflow: "hidden",
-            margin: "0 auto 20px",
-            border: "4px solid #2575fc",
+            objectFit: "cover",
           }}
-        >
-          <img
-            src={profilePic}
-            alt="Author"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          />
+        />
+        <div>
+          <h2 style={{ margin: 0, textTransform: "capitalize" }}>
+            {authorName}
+          </h2>
+          <p style={{ margin: "5px 0", color: "#555" }}>
+            Software Developer, C++ & React enthusiast 🚀
+          </p>
         </div>
+      </div>
 
-        {/* Author Name */}
-        <h2 style={{ margin: "10px 0" }}>Rifah Tasniah Mahek</h2>
+      {/* Popular Articles Section */}
+      <div style={{ marginTop: "40px" }}>
+        <h3>Popular Articles</h3>
+        <ul style={{ listStyle: "none", padding: 0 }}>
+         <li>
+  <a
+    href="#"
+    style={{ color: "#1e90ff", textDecoration: "none" }}
+  >
+    https://codecademy.com/article/binary-search-in-cpp
+  </a>
+  <span style={{ marginLeft: "10px", color: "#555", fontSize: "0.9em" }}>
+    Hope you liked my article page!
+  </span>
+</li>
 
-        {/* Back Button */}
-        <button
-          onClick={() => navigate(-1)}
-          style={{
-            marginTop: "20px",
-            padding: "10px 20px",
-            borderRadius: "8px",
-            border: "none",
-            backgroundColor: "#2575fc",
-            color: "#fff",
-            cursor: "pointer",
-            fontSize: "16px",
-          }}
-        >
-          Back
-        </button>
+
+        </ul>
       </div>
     </div>
   );

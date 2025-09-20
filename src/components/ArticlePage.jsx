@@ -1,16 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { articleData } from '../data'; 
+import { articleData } from '../data';
 import PostReactions from './PostReactions';
 import CommentSection from './CommentSection';
+import profilePic from "../assets/profilepic.jpeg"; // author profile picture
 
 function ArticlePage() {
   const { title, subTitle, imageCaption, authorName, publishDate, body } = articleData;
 
   return (
     <div className="article-container">
+      {/* Breadcrumbs */}
       <div className="breadcrumbs">
-        <a href="#">Section</a> &gt; <a href="#">Sub-section</a>
+        <Link to="/section">Section</Link> &gt;{" "}
+        <Link to={`/section/subsection/${encodeURIComponent(authorName)}`}>
+          Sub-section
+        </Link>
       </div>
 
       <header className="article-header">
@@ -21,10 +26,12 @@ function ArticlePage() {
       <div className="article-image-placeholder"></div>
       <p className="image-caption">{imageCaption}</p>
 
+      {/* Author Info */}
       <div className="author-info">
-        <div className="author-avatar"></div>
+        <div className="author-avatar">
+          <img src={profilePic} alt={authorName} />
+        </div>
         <div className="author-details">
-         
           <Link to={`/author/${encodeURIComponent(authorName)}`}>
             {authorName}
           </Link>
@@ -35,9 +42,8 @@ function ArticlePage() {
       <div className="article-body">
         <p>{body}</p>
       </div>
-      
-      <PostReactions />
 
+      <PostReactions />
       <CommentSection />
     </div>
   );

@@ -10,6 +10,12 @@ function App() {
     <Router>
      
       <Routes>
+        {/* Section = Article Page */}
+        <Route path="/section" element={<ArticlePage />} />
+
+        {/* Sub-section = Profile Page */}
+        <Route path="/section/subsection/:authorName" element={<AuthorProfilePage />} />
+
        
         <Route path="/" element={<ArticlePage />} />
 
